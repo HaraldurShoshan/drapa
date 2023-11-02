@@ -9,39 +9,44 @@ import Halli from '@/public/halli_portrait.jpg';
 
 const memberPictures = [
 	{
-		name: 'Jakob/Guitar',
+		name: 'Jakob',
 		src: Jakob,
 		Imageleft: 12,
 		top: 0,
 		opacity: 50,
+		instrument: 'Guitar',
 	},
 	{
-		name: 'Örn/Drums',
+		name: 'Örn',
 		src: Orn,
 		Imageleft: 9,
 		top: 0,
 		opacity: 80,
+		instrument: 'Drums',
 	},
 	{
-		name: 'Sævar/Vocals',
+		name: 'Sævar',
 		src: Saevar,
 		Imageleft: 9,
 		top: 0,
 		opacity: 70,
+		instrument: 'Vocals',
 	},
 	{
-		name: 'Tomas/Guitar',
+		name: 'Tomas',
 		src: Tommi,
 		Imageleft: 9,
 		top: 3,
 		opacity: 50,
+		instrument: 'Guitar',
 	},
 	{
-		name: 'Halli/Bass',
+		name: 'Halli',
 		src: Halli,
 		Imageleft: 2,
 		top: 6,
 		opacity: 70,
+		instrument: 'Bass',
 	},
 ];
 
@@ -57,6 +62,9 @@ export default function MemberPictures() {
 				>
 					<div className="absolute z-10 flex justify-center bottom-0 sm:bottom-auto font-custom w-full text-gray-400/80 sm:-rotate-90 text-8xl group-hover:opacity-0 duration-300">
 						{member.name}
+					</div>
+					<div className="absolute z-10 flex top-5 justify-center font-custom text-6xl opacity-0 text-gray-400/60 group-hover:opacity-100 sm:duration-[500ms]">
+						{member.instrument}
 					</div>
 					<Image
 						src={member.src}
