@@ -1,4 +1,5 @@
-import { m } from 'framer-motion';
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Jakob from '@/public/jakob_portrait.jpg';
@@ -6,6 +7,7 @@ import Orn from '@/public/orn_portrait.jpg';
 import Saevar from '@/public/saevar_portrait.jpg';
 import Tommi from '@/public/tomas_portrait.jpg';
 import Halli from '@/public/halli_portrait.jpg';
+import { useSectionInView } from '@/lib/hooks';
 
 const memberPictures = [
 	{
@@ -51,9 +53,14 @@ const memberPictures = [
 ];
 
 export default function MemberPictures() {
-	const width = 30;
+	const { ref } = useSectionInView('About', 0.5);
+
 	return (
-		<section className="flex flex-wrap sm:flex-nowrap gap-2 justify-around top-[30rem] h-[50rem] w-full sm:px-10 sm:gap-0">
+		<section
+			ref={ref}
+			id="about"
+			className="flex flex-wrap sm:flex-nowrap gap-2 justify-around scroll-mt-[10rem] top-[30rem] h-auto sm:h-[50rem] w-full sm:px-10 sm:gap-0"
+		>
 			{memberPictures.map((member) => (
 				<div
 					key={member.name}
@@ -63,7 +70,7 @@ export default function MemberPictures() {
 					<div className="absolute z-10 flex justify-center bottom-0 sm:bottom-auto font-custom w-full text-gray-400/80 sm:-rotate-90 text-8xl group-hover:opacity-0 duration-300">
 						{member.name}
 					</div>
-					<div className="absolute z-10 flex top-5 justify-center font-custom text-6xl opacity-0 text-gray-400/60 group-hover:opacity-100 sm:duration-[500ms]">
+					<div className="absolute z-10 flex bottom-4 sm:top-5 justify-center font-custom text-6xl opacity-0 text-gray-400/60 group-hover:opacity-100 sm:duration-[500ms]">
 						{member.instrument}
 					</div>
 					<Image
@@ -74,76 +81,6 @@ export default function MemberPictures() {
 					/>
 				</div>
 			))}
-			{/* <div
-				className="group flex items-center justify-center overflow-hidden relative h-[40rem] w-32 border border-gray-400/40 rounded-tl-full rounded-tr-full rounded-br-full rounded-bl-full
-                hover:w-[25rem] hover:rounded-tr-none hover:rounded-tl-none transition-all duration-[500ms] ease-in-out"
-			>
-				<div className="absolute z-10 font-custom  text-gray-400/80 -rotate-90 text-8xl group-hover:opacity-0 duration-300">
-					Jakob
-				</div>
-				<Image
-					src={Jakob}
-					alt="jakob"
-					style={{ maxWidth: 'none', height: 'initial' }}
-					className="opacity-50 absolute top-0 -left-[12rem] w-[40rem] h-full group-hover:opacity-100 duration-500"
-				/>
-			</div>
-			<div
-				className="group flex items-center justify-center overflow-hidden relative h-[40rem] w-32 border border-gray-400/40 rounded-tl-full rounded-tr-full rounded-br-full rounded-bl-full
-                hover:w-[25rem] hover:rounded-tr-none hover:rounded-tl-none transition-all duration-[500ms] ease-in-out"
-			>
-				<div className="absolute font-custom  z-10 text-gray-400/80 -rotate-90 text-8xl group-hover:opacity-0 duration-300">
-					Örn
-				</div>
-				<Image
-					src={Orn}
-					alt="orn"
-					style={{ maxWidth: 'none', height: 'initial' }}
-					className="opacity-80 absolute top-0 -left-[9rem] w-[40rem] h-full group-hover:opacity-100 duration-500"
-				/>
-			</div>
-			<div
-				className="group flex items-center justify-center overflow-hidden relative h-[40rem] w-32 border border-gray-400/40 rounded-tl-full rounded-tr-full rounded-br-full rounded-bl-full
-                hover:w-[25rem] hover:rounded-tr-none hover:rounded-tl-none transition-all duration-[500ms] ease-in-out"
-			>
-				<div className="absolute z-10 font-custom text-gray-400/80 -rotate-90 text-8xl group-hover:opacity-0 duration-300">
-					Sævar
-				</div>
-				<Image
-					src={Saevar}
-					alt="sævar"
-					style={{ maxWidth: 'none', height: 'initial' }}
-					className="opacity-70 absolute top-0 -left-[9rem] w-[40rem] h-full group-hover:opacity-100 duration-500"
-				/>
-			</div>
-			<div
-				className="group flex items-center justify-center overflow-hidden relative h-[40rem] w-32 border border-gray-400/40 rounded-tl-full rounded-tr-full rounded-br-full rounded-bl-full
-                hover:w-[25rem] hover:rounded-tr-none hover:rounded-tl-none transition-all duration-[500ms] ease-in-out"
-			>
-				<div className="absolute z-10 font-custom text-gray-400/80 -rotate-90 text-8xl group-hover:opacity-0 duration-300">
-					Tómas
-				</div>
-				<Image
-					src={Tommi}
-					alt="tommi"
-					style={{ maxWidth: 'none', height: 'initial' }}
-					className="opacity-50 absolute -top-[3rem] -left-[9rem] w-[40rem] h-full group-hover:opacity-100 duration-500"
-				/>
-			</div>
-			<div
-				className="group flex items-center justify-center overflow-hidden relative h-[40rem] w-32 border border-gray-400/40 rounded-tl-full rounded-tr-full rounded-br-full rounded-bl-full
-                hover:w-[25rem] hover:rounded-tr-none hover:rounded-tl-none transition-all duration-[500ms] ease-in-out"
-			>
-				<div className="absolute z-10 font-custom  text-gray-400/80 -rotate-90 text-8xl group-hover:opacity-0 duration-300">
-					Halli
-				</div>
-				<Image
-					src={Halli}
-					alt="halli"
-					style={{ maxWidth: 'none', height: 'initial' }}
-					className="opacity-70 absolute -top-[6rem] -left-[2rem] w-[40rem] h-full group-hover:opacity-100 duration-500"
-				/>
-			</div> */}
 		</section>
 	);
 }

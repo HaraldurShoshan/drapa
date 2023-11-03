@@ -8,13 +8,13 @@ export const links = [
 		hash: '#about',
 	},
 	{
-		name: 'Concerts',
-		hash: '#concerts',
-	},
-	{
 		name: 'Social Media',
 		hash: '#socialMedia',
 	},
+	// {
+	// 	name: 'Concerts',
+	// 	hash: '#concerts',
+	// },
 	{
 		name: 'Contact',
 		hash: '#contact',
