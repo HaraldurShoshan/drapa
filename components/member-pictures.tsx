@@ -15,7 +15,7 @@ const memberPictures = [
 		src: Jakob,
 		Imageleft: 12,
 		top: 0,
-		opacity: 50,
+		opacity: 20,
 		instrument: 'Guitar',
 	},
 	{

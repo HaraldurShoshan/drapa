@@ -4,6 +4,6 @@ const nextConfig = {};
 
 module.exports = nextConfig;
 
-const withSvgr = require('next-svgr');
+// const withSvgr = require('next-svgr');
 
-module.exports = withSvgr({});
+// module.exports = withSvgr({});
