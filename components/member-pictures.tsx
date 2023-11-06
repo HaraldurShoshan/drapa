@@ -15,7 +15,7 @@ const memberPictures = [
 		src: Jakob,
 		Imageleft: 12,
 		top: 0,
-		opacity: 20,
+		opacity: 10,
 		instrument: 'Guitar',
 	},
 	{
@@ -53,7 +53,7 @@ const memberPictures = [
 ];
 
 export default function MemberPictures() {
-	const { ref } = useSectionInView('About', 0.5);
+	const { ref } = useSectionInView('About', 0.2);
 
 	return (
 		<section
@@ -77,7 +77,7 @@ export default function MemberPictures() {
 						src={member.src}
 						alt={member.name}
 						style={{ maxWidth: 'none', height: 'initial' }}
-						className={`opacity-${member.opacity} absolute top-${member.top} -left-[${member.Imageleft}rem] w-[40rem] h-full group-hover:opacity-100 duration-500`}
+						className={`opacity-30 absolute top-${member.top} -left-[${member.Imageleft}rem] w-[40rem] h-full group-hover:opacity-100 duration-500`}
 					/>
 				</div>
 			))}
