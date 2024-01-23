@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import DrapaLogo from '@/public/drapa_logo.svg';
 import DrapaLogoNewBrons from '@/public/Drapa_logo_new_brons.png';
 import DrapaLogoNewWhite from '@/public/DrapaCLEAN_WHITE.svg';
+import DrapaLogoNewBronsSkraut from '@/public/Drapa_logo_brons_skraut.svg';
 import Image from 'next/image';
 import { useSectionInView } from '@/lib/hooks';
 
@@ -19,9 +20,9 @@ export default function Logo() {
 			{/* <DrapaLogo /> */}
 			<Image
 				priority
-				src={DrapaLogoNewBrons}
+				src={DrapaLogoNewBronsSkraut}
 				alt="Drapa Logo"
-				className="h-auto w-[20rem] sm:w-[40rem] text-white"
+				className="h-auto w-[20rem] sm:w-[80rem] md:w-[80rem] text-white"
 			/>
 		</section>
 	);
